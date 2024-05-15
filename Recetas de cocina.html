@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Menú de Cocina</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #container {
+        max-width: 600px;
+        margin: 50px auto;
+        text-align: center;
+    }
+    #menu {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <h1>Generador de Menú de Cocina</h1>
+    <label for="selectArticulo">Selecciona un artículo:</label>
+    <select id="selectArticulo">
+        <option value="Ensalada">Ensalada</option>
+        <option value="Sopa">Sopa</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Pollo">Pollo</option>
+        <option value="Pescado">Pescado</option>
+    </select>
+    <button onclick="agregarAlMenu()">Agregar al Menú</button>
+    <div id="menu">
+        <h2>Mi Menú</h2>
+        <ul id="listaMenu"></ul>
+    </div>
+</div>
+<script>
+    function agregarAlMenu() {
+        var select = document.getElementById("selectArticulo");
+        var articuloSeleccionado = select.options[select.selectedIndex].value;
+        var listaMenu = document.getElementById("listaMenu");
+        var nuevoElemento = document.createElement("li");
+        nuevoElemento.textContent = articuloSeleccionado;
+        listaMenu.appendChild(nuevoElemento);
+    }
+</script>
+</body>
+</html>
